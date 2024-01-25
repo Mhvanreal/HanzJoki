@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HanzJoki</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_dashboard">Profile</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_logo">HANZ JOKI</string>
+    <string name="Lacak_orderan">Lacak</string>
+</resources>
