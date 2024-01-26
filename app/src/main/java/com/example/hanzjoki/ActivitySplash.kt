@@ -12,7 +12,7 @@ class ActivitySplash : AppCompatActivity() {
         setContentView(R.layout.activity_splash2)
         Handler(Looper.getMainLooper()).postDelayed({
             GoToMainActivity()
-        }, 8000L)
+        }, 5000L)
     }
 
     private fun GoToMainActivity() {

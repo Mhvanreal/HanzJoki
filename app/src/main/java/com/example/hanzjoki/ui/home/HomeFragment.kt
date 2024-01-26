@@ -14,8 +14,10 @@ import com.example.hanzjoki.R
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private lateinit var adapter: AdapterHome
+    private lateinit var adapter: AdapterHome;
+    private lateinit var adapter2: PromoAdapter;
     private lateinit var recyclerViewCatagoryList: RecyclerView
+    private lateinit var recyclerViewPromoList: RecyclerView
 
     private val binding get() = _binding!!
 
@@ -44,10 +46,26 @@ class HomeFragment : Fragment() {
             add(CategoryHome("Joki Classic", "console"))
             // Tambahkan item-category lainnya sesuai kebutuhan
         }
-
-
         adapter = AdapterHome(categories)
         recyclerViewCatagoryList.adapter = adapter
+
+
+        val layoutManager2 = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            recyclerViewPromoList = root.findViewById(R.id.recyclerView2)
+            recyclerViewPromoList.layoutManager = layoutManager2
+
+            val promo = ArrayList<PromoHome>().apply {
+                add(PromoHome("Epic", "promoepic"))
+                add(PromoHome("Legend", "promolegends"))
+                add(PromoHome("Mythic", "promomytic"))
+                add(PromoHome("Honor", "promohonor"))
+                add(PromoHome("Glory", "promoglory"))
+            }
+
+
+        adapter2 = PromoAdapter(promo)
+        recyclerViewPromoList.adapter = adapter2
+
 
         return root
     }
